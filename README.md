@@ -73,6 +73,9 @@ A class to store all orders and to get the final status. Added to make the progr
 ### Methods
 - `final_status()` : Prints out the final status for all orders.
 
+## Project Status
+
+The project is 100% implemented based on the required features with no errors, also containing an extra class to make the program fit the OOP theme more
 
 ##  Running the Program
 
