@@ -9,6 +9,9 @@ This is an OOP which simulates a simple delivery service where customers can pla
 - The order will be created as an object and will initially be on "preparing".
 - A driver can be assigned to each order and can also deliver them which will change the status from "preparing" to "delivered".
 
+(Additional features)
+- Added an OrderCentre class so the program fits the OOP theme more.
+
 ## Project Structure
 
 - `ku_delivery.py`: Defines all the class nessecary for this program and also run the test at the same time.
@@ -59,6 +62,17 @@ Represents an order made by the customer.
 ### Methods
 - `assign_driver(driver)`: Assign a driver to the order.
 - `summary()` : Returns the summary text for the order.
+
+## OrderCentre Class
+
+A class to store all orders and to get the final status. Added to make the program fit the OOP theme more.
+
+### Attributes
+- `all_order` (list): List that stores all orders.
+
+### Methods
+- `final_status()` : Prints out the final status for all orders.
+
 
 ##  Running the Program
 
