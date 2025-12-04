@@ -12,7 +12,7 @@ class Customer(Person):
         self.address = address
 
     def place_order(self, item):
-        pass
+        return DeliveryOrder(self.name, item, "preparing")
 
 
 class Driver(Person):
