@@ -22,6 +22,7 @@ class Driver(Person):
 
     def deliver(self, order):
         print(f"{self.name} is delivering {order.item} to {order.customer} using {self.vehicle}.")
+        order.status = "delivered"
 
 
 class DeliveryOrder():
@@ -32,8 +33,38 @@ class DeliveryOrder():
         self.driver = "None"
 
     def assign_driver(self, driver):
-        self.driver = driver
+        self.driver = driver.name
 
     def summary(self):
-        return f"Order Summary:\nItem: {self.item}\nCustomer: {self.customer}\nStatus: {self.status}\nDriver: {self.driver}"    
-    
+        return f"Order Summary:\nItem: {self.item}\nCustomer: {self.customer}\nStatus: {self.status}\nDriver: {self.driver}"
+
+all_orders = []
+
+customer1 = Customer("Alice", "32nd Good Wood Road")
+customer2 = Customer("Bob", "Yellow Street")
+driver1 = Driver("David", "Motorcycle")
+customer1.introduce()
+customer2.introduce()
+driver1.introduce()
+print()
+
+order1 = customer1.place_order("Laptop")
+order1.assign_driver(driver1)
+all_orders.append(order1)
+print(order1.summary())
+print()
+
+order2 = customer2.place_order("Headphones")
+order2.assign_driver(driver1)
+all_orders.append(order2)
+print(order2.summary())
+print()
+
+driver1.deliver(order1)
+driver1.deliver(order2)
+
+print()
+print("Final Status:")
+for i in all_orders:
+    print(f"Order for {i.item} → {i.status}")
+
