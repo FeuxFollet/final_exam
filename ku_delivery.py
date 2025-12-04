@@ -63,7 +63,7 @@ print()
 driver1.deliver(order1)
 driver1.deliver(order2)
 
-print
+print()
 print("Final Status:")
 for i in all_orders:
     print(f"Order for {i.item} → {i.status}")
